@@ -181,6 +181,7 @@ public class DownloadDialog {
                 if (!isDownloading) {
                     iv_down_load_status.setVisibility(View.GONE);
                     progressRing.setVisibility(View.VISIBLE);
+                    progressRing.setProgress(0);
                     listener.onClick(v);
                 }
                 isOpenStartBtn = false;
@@ -206,6 +207,7 @@ public class DownloadDialog {
             public void onClick(View v) {
                 if (!isDownloading) {
                     listener.onClick(v);
+                    progressRing.setProgress(0);
                     iv_down_load_status.setVisibility(View.GONE);
                     progressRing.setVisibility(View.VISIBLE);
                 }

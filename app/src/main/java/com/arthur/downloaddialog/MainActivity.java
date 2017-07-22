@@ -31,7 +31,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
      * //为了测试添加了i，改动这个i可以重新加载下载效果，否则会判断本如果有下载会不重复下载，直接完成
      * //正常情况下i是不需要的
      */
-    private int i = 30;
+    private int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -275,7 +275,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             handlerOvertime.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    downLoadDialog.setDownloadErrorForce("下载时间变得漫长了", MainActivity.this);
+                    if (downLoadDialog != null) {
+                        downLoadDialog.setDownloadErrorForce("下载时间变得漫长了", MainActivity.this);
+                    }
                 }
             }, 30000);
         } catch (Exception e) {
@@ -286,6 +288,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (downLoadDialog != null) {
+            downLoadDialog = null;
+        }
         handlerOvertime.removeCallbacks(null);
     }
 }
