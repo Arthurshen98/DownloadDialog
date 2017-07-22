@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_down_load_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_down_load_app_dialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_fresh_down_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/dialog_black_text"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/dialog_line_break_up" />
+
+    <com.arthur.dialoglibrary.load.RingProgressBar
+        android:id="@+id/progress_ring_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        app:ring_Color="@color/download_dialog_ring_Color"
+        app:ring_ProgressColor="@color/download_dialog_ring_ProgressColor"
+        app:ring_textIsShow="true"
+        app:ring_textSize="14sp"
+        app:ring_Width="3dp"
+        app:ring_textColor="@color/dialog_color_main"
+        app:ring_style="STROKE"
+        />
+    <ImageView
+        android:id="@+id/iv_down_load_status"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/dialog_line_break_up" />
+
+    <TextView
+        android:id="@+id/tv_fresh_down_again"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/dialog_color_main"
+        android:textSize="14sp"
+        android:padding="3dp"
+        android:visibility="invisible" />
+</LinearLayout>

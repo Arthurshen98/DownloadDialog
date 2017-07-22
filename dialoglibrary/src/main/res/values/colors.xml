@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dialog_color_main" >#2a7fd5</color>
+    <color name="dialog_bg_main_1">#f9f9f9</color>
+    <color name="dialog_black_text">#2d2b2b</color>
+    <color name="dialog_line_break_up" >#eeeeee</color>
+    <color name="download_dialog_ring_Color" >#c6c6c6</color>
+    <color name="download_dialog_ring_ProgressColor" >#2a7fd5</color>
+</resources>

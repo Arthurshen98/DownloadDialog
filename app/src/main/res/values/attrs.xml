@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--下载动画 ring-->
+    <declare-styleable name="RingProgressBar">
+        <attr name="ring_Color" format="color" />
+        <attr name="ring_ProgressColor" format="color" />
+        <attr name="ring_Width" format="dimension" />
+        <attr name="ring_textColor" format="color" />
+        <attr name="ring_textSize" format="dimension" />
+        <attr name="ring_max" format="integer" />
+        <attr name="ring_textIsShow" format="boolean" />
+        <attr name="ring_style">
+            <enum name="STROKE" value="0" />
+            <enum name="FILL" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>
