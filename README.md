@@ -183,7 +183,7 @@ if (downLoadDialog == null) {
             downLoadDialog.setUpDateProgress(totalBytes, soFarBytes);
         }
     }
-```Java
+```
 
 ##### （2）下载完成
 
