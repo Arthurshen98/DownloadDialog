@@ -34,7 +34,7 @@ Usage
 
 ##### （1）弹出自动下载
 
-<pre>
+```Java
 /**
      * 显示dialog
      * 2，直接运行该dialog即可开始下载
@@ -79,10 +79,11 @@ Usage
             downLoadDialog = null;
         }
     }
-<code>
+```
 
 ##### （2）点击开始下载
-<pre>
+
+```Java
 if (downLoadDialog == null) {
             downLoadDialog = new DownloadDialog(this);
             downLoadDialog.builder()
@@ -113,11 +114,11 @@ if (downLoadDialog == null) {
         } else {
             downLoadDialog = null;
         }
-<code>
+```
 
 #### 3，（如果没有网络请求工具的看这里）我在demo里面有写封装好的网络请求工具使用OKHttp,专注于上传下载封装，详情见demo
 
-<pre>
+```Java
 //服务器给你的下载地址
         String url = "https://apkegg.mumayi.com/cooperation/2015/02/07/91/916451/qihuanshejiFantaShooting_V2.21_mumayi_8c478.apk";
         //服务器给你的版本号
@@ -164,12 +165,13 @@ if (downLoadDialog == null) {
 
                     }
                 });
-<code>
+```
 
 #### 4，下载中，下载完成，下载错误dialog方法的实现
+
 ##### （1）下载中
 
-<pre>
+```Java
 /**
      * 正在下载中
      *
@@ -207,11 +209,11 @@ if (downLoadDialog == null) {
             });
         }
     }
-<code>
+```
 
 ##### （3）下载错误
 
-<pre>
+```Java
     /**
      * 下载错误
      */
@@ -233,6 +235,6 @@ if (downLoadDialog == null) {
             }
         }
     }
-<code>
+```Java
 
 很多方法在源码中，源码中注释写的非常详细，详情可以查看源码便知。
