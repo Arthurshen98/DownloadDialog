@@ -200,7 +200,7 @@ if (downLoadDialog == null) {
                 @Override
                 public void downloadComplete() {
                     downLoadDialog = null;
-                    if (isMustDownload) {
+                    if (isMustDownload) {//这个是自己定义的，这个判断是用于是否强制更新app，如果强制表示true，如果不强制可返回，或有其他操作
                         MainActivity.this.finish();
                     } else {
                         isUninstallReturn = true;
@@ -219,8 +219,8 @@ if (downLoadDialog == null) {
      */
     private void respondDownError() {
         if (downLoadDialog != null) {
-            if (isMustDownload) {
-                //返回退出app
+            if (isMustDownload) {//这个判断是用于是否强制更新app，如果强制表示true，如果不强制可返回，或有其他操作
+               //返回退出app
                 downLoadDialog.setDownloadErrorForce("重新下载", MainActivity.this);
             } else {
                 //返回可进行其他操作
