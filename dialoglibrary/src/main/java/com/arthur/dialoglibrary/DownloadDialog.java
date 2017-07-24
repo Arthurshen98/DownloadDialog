@@ -254,8 +254,19 @@ public class DownloadDialog {
             }
 
             try {
-                BigDecimal result = new BigDecimal(String.valueOf(progress)).divide(new BigDecimal(String.valueOf(totalProgress)),
-                        2, BigDecimal.ROUND_HALF_UP);
+                BigDecimal result = null;
+                if (totalProgress > progress) {
+                    result = new BigDecimal(String.valueOf(progress)).divide(new BigDecimal(String.valueOf(totalProgress)),
+                            2, BigDecimal.ROUND_HALF_UP);
+                } else {
+                    result = new BigDecimal(String.valueOf(totalProgress)).divide(new BigDecimal(String.valueOf(progress)),
+                            2, BigDecimal.ROUND_HALF_UP);
+                }
+
+                if (result == null) {
+                    return;
+                }
+
                 String s = new DecimalFormat("###,###.###").format(Double.valueOf(result.toString())).toString();
                 float currentPro = Float.parseFloat(s);
 
