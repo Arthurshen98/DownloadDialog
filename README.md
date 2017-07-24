@@ -26,13 +26,13 @@ Demonstration
 
 Usage
 --
-####1，引入 library或者把library中的代码复制到自己的工程中####
+#### 1，引入 library或者把library中的代码复制到自己的工程中
 
 暂时没有支持gradle引用方式
 
-####2，使用方式，可以dialog弹出就开始下载或弹出后点击“开始下载”手动开始下载####
+#### 2，使用方式，可以dialog弹出就开始下载或弹出后点击“开始下载”手动开始下载
 
-#####（1）弹出自动下载#####
+##### （1）弹出自动下载
 
 <pre>
 /**
@@ -81,7 +81,7 @@ Usage
     }
 <code>
 
-#####（2）点击开始下载#####
+##### （2）点击开始下载
 <pre>
 if (downLoadDialog == null) {
             downLoadDialog = new DownloadDialog(this);
@@ -115,7 +115,7 @@ if (downLoadDialog == null) {
         }
 <code>
 
-####3，（如果没有网络请求工具的看这里）我在demo里面有写封装好的网络请求工具使用OKHttp,专注于上传下载封装，详情见demo####
+#### 3，（如果没有网络请求工具的看这里）我在demo里面有写封装好的网络请求工具使用OKHttp,专注于上传下载封装，详情见demo
 
 <pre>
 //服务器给你的下载地址
@@ -166,8 +166,8 @@ if (downLoadDialog == null) {
                 });
 <code>
 
-####4，下载中，下载完成，下载错误dialog方法的实现####
-#####（1）下载中#####
+#### 4，下载中，下载完成，下载错误dialog方法的实现
+##### （1）下载中
 
 <pre>
 /**
@@ -183,7 +183,7 @@ if (downLoadDialog == null) {
     }
 <code>
 
-#####（2）下载完成#####
+##### （2）下载完成
 
 <pre>
 /**
@@ -209,7 +209,7 @@ if (downLoadDialog == null) {
     }
 <code>
 
-#####（3）下载错误#####
+##### （3）下载错误
 
 <pre>
     /**
