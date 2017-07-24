@@ -146,7 +146,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         String version = "1.0." + i;
         //修改这个路径可再次下载效果
         final String appFilePath = ApkUtil.getAppSystemPath(this) + "/" + "xx_app_13" + version + ".apk";
-        //使用这个下载框架需要在application中初始化
+        //使用这个下载框架需要在application中初始化,请看我的BaseApplication
         Easy.load(this, url)
                 .asDownload(appFilePath)
                 .execute(new EasyDownloadListener() {
