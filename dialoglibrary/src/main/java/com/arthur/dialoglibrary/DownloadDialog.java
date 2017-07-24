@@ -23,6 +23,8 @@ import com.arthur.dialoglibrary.tool.ApkUtil;
 import com.arthur.dialoglibrary.tool.ScreenUtils;
 
 import java.io.File;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 /**
  * Created by arthur on 2017/7/20.
@@ -233,13 +235,7 @@ public class DownloadDialog {
         //关闭重复点击下载按钮
         isDownloading = true;
         if (progressRing != null) {
-            if (progressTotal > 100000) {
-                progressRing.setMax(progressTotal / LIMITSHR);
-            } else if (progressTotal > 10000000) {
-                progressRing.setMax(progressTotal / MILISHR);
-            } else {
-                progressRing.setMax(progressTotal);
-            }
+            progressRing.setMax(progressTotal / LIMITSHR);
         }
     }
 
@@ -257,15 +253,18 @@ public class DownloadDialog {
                 isDownload = false;
             }
 
-            Message message = Message.obtain();
-            if (progress > 100000) {
-                message.obj = progress / LIMITSHR;
-            } else if (progress > 10000000) {
-                message.obj = progress / MILISHR;
-            } else {
-                message.obj = progress;
+            try {
+                BigDecimal result = new BigDecimal(String.valueOf(progress)).divide(new BigDecimal(String.valueOf(totalProgress)),
+                        2, BigDecimal.ROUND_HALF_UP);
+                String s = new DecimalFormat("###,###.###").format(Double.valueOf(result.toString())).toString();
+                float currentPro = Float.parseFloat(s);
+
+                Message message = Message.obtain();
+                message.obj = (int) (currentPro * 100);
+                handler.sendMessage(message);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            handler.sendMessage(message);
         }
     }
 
@@ -298,7 +297,7 @@ public class DownloadDialog {
                         downloadOnBackKey.downloadOnBackKey();
                         dialog.dismiss();
                         return true;
-                    }else {
+                    } else {
                         return false;
                     }
                 }
