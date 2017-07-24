@@ -45,14 +45,6 @@ public class DownloadDialog {
     private RingProgressBar progressRing;
     private TextView tv_fresh_down_again;
     private LinearLayout ll_down_load_dialog;
-    /**
-     * 下载完成后所有动作完成
-     */
-    private DownloadAllComplete downloadAllComplete;
-    /**
-     * 下载异常后的动作
-     */
-    private DownloadException downloadException;
 
     /**
      * 是否下载出错
@@ -281,7 +273,7 @@ public class DownloadDialog {
     /**
      * 下载失败,不强制更新
      */
-    public void setShowDownloadError(String textError, final DownloadException downloadException) {
+    public void setShowDownloadError(String textError, final DownloadOnBackKey downloadOnBackKey) {
         if (dialog != null) {
             if (!TextUtils.isEmpty(textError)) {
                 tv_fresh_down_again.setText(textError);
@@ -296,14 +288,14 @@ public class DownloadDialog {
 
             //下载失败将开启返回键可关闭dialog
             isDownloadError = true;
-            //触摸dialog外面可关闭
-            dialog.setCanceledOnTouchOutside(true);
+            //触摸dialog外面bu可关闭
+            dialog.setCanceledOnTouchOutside(false);
             //下载错误时，返回回调一个方法，方便置空dialog和进入两一个界面
             dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
                 @Override
                 public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
                     if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-                        downloadException.downloadException();
+                        downloadOnBackKey.downloadOnBackKey();
                         dialog.dismiss();
                         return true;
                     }else {
@@ -471,7 +463,7 @@ public class DownloadDialog {
         void downloadComplete();
     }
 
-    public interface DownloadException {
-        void downloadException();
+    public interface DownloadOnBackKey {
+        void downloadOnBackKey();
     }
 }

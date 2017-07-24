@@ -233,9 +233,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 downLoadDialog.setDownloadErrorForce("重新下载", MainActivity.this);
             } else {
                 //返回可进行其他操作
-                downLoadDialog.setShowDownloadError("重新下载", new DownloadDialog.DownloadException() {
+                downLoadDialog.setShowDownloadError("重新下载", new DownloadDialog.DownloadOnBackKey() {
                     @Override
-                    public void downloadException() {
+                    public void downloadOnBackKey() {
                         downLoadDialog = null;
                         //进入其他页面
                         interAppDelayed(1000);
