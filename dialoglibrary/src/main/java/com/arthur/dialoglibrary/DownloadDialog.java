@@ -220,7 +220,7 @@ public class DownloadDialog {
      * 底部是否下载成功提示
      *
      * @param text
-     * @param isClick 取消点击事件
+     * @param isClick 点击事件
      */
     public void setBottomStatusText(String text, boolean isClick) {
         if (dialog != null) {
