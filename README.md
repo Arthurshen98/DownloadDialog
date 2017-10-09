@@ -4,16 +4,16 @@ Introduction
 --
 这是一个apk下载工具，专注于打开应用时apk更新下载，可以显示多种形式，可以强制更新限制，返回键禁止，或者退出app等，
 可以打开dialogapk就自动下载或者点击开始下载手动去下载。
-
+如果图片看不到，请到这里blog链接查看http://blog.csdn.net/syif88/article/details/78017681
 Demonstration
 --
 效果图1，点击dialog直接进行的是实心加载，下载完成之后就可以自动提示安装
 
-![](https://github.com/Arthurshen98/DownloadDialog/blob/master/gif/download_1.gif) 
+![](https://github.com/Arthurshen98/DownloadDialog/master/gif/download_1.gif) 
 
 效果图2，点击dialog显示开始下载，可手动点击下载开始下载
 
-![](https://github.com/Arthurshen98/DownloadDialog/blob/master/gif/download_2.gif) 
+![](https://github.com/Arthurshen98/DownloadDialog/master/gif/download_2.gif) 
 
 效果图3和4，加载异常的情况，会显示异常，可点击重新下载，即可重新开始下载
 
